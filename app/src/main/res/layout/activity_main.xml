@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp" />
+
+    <!-- Counter Label -->
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/counter_label"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Count Display -->
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="0"
+        android:textSize="64sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@drawable/circle_background"
+        app:layout_constraintTop_toBottomOf="@id/tv_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Increment Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_increment"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/btn_increment"
+        android:textSize="18sp"
+        app:cornerRadius="12dp"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintTop_toBottomOf="@id/tv_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
+    <!-- Decrement Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_decrement"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/btn_decrement"
+        android:textSize="18sp"
+        app:cornerRadius="12dp"
+        android:backgroundTint="@color/secondary"
+        app:layout_constraintTop_toBottomOf="@id/btn_increment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
+    <!-- Reset Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_reset"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/btn_reset"
+        android:textSize="18sp"
+        app:cornerRadius="12dp"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:strokeColor="@color/primary"
+        app:layout_constraintTop_toBottomOf="@id/btn_decrement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
