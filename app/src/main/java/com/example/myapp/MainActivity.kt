@@ -1,5 +1,6 @@
 package com.example.myapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp.databinding.ActivityMainBinding
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnReset.setOnClickListener {
             count = 0
             updateCountDisplay()
+        }
+
+        binding.btnCoffeeMaker.setOnClickListener {
+            startActivity(Intent(this, CoffeeMakerActivity::class.java))
         }
     }
 

@@ -100,4 +100,20 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp" />
 
+    <!-- Coffee Maker Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_coffee_maker"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/btn_coffee_maker"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        android:backgroundTint="@color/coffee_brown"
+        app:layout_constraintTop_toBottomOf="@id/btn_reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
