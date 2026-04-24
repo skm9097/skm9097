@@ -3,6 +3,25 @@
     <string name="app_name">Counter App</string>
     <string name="counter_label">Tap the buttons to count</string>
     <string name="btn_increment">+ Increment</string>
-    <string name="btn_decrement">− Decrement</string>
+    <string name="btn_decrement">&#8722; Decrement</string>
     <string name="btn_reset">Reset</string>
+    <string name="btn_coffee_maker">&#9749; Coffee Maker</string>
+
+    <!-- Coffee Maker -->
+    <string name="coffee_maker_title">Coffee Maker</string>
+    <string name="coffee_cup_icon">&#9749;</string>
+    <string name="label_coffee_type">Coffee Type</string>
+    <string name="label_size">Size</string>
+    <string name="coffee_espresso">Espresso</string>
+    <string name="coffee_cappuccino">Cappuccino</string>
+    <string name="coffee_latte">Latte</string>
+    <string name="coffee_americano">Americano</string>
+    <string name="size_small">Small</string>
+    <string name="size_medium">Medium</string>
+    <string name="size_large">Large</string>
+    <string name="btn_brew">Brew Coffee</string>
+    <string name="btn_brew_again">Brew Another</string>
+    <string name="status_idle">Choose your coffee and tap Brew.</string>
+    <string name="status_brewing">Brewing your %1$s (%2$s)&#8230;</string>
+    <string name="status_done">Your %1$s is ready. Enjoy!</string>
 </resources>
