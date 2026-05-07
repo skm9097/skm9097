@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.mms.mdstudio
 
 import android.os.Bundle
 import android.os.CountDownTimer

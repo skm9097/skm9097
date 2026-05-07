@@ -1,9 +1,9 @@
-package com.example.myapp
+package com.mms.mdstudio
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapp.databinding.ActivityMainBinding
+import com.mms.mdstudio.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

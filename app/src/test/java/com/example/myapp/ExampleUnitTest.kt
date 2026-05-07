@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.mms.mdstudio
 
 import org.junit.Test
 import org.junit.Assert.*
