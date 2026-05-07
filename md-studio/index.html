@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>MD Studio</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <span class="app-logo">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect width="22" height="22" rx="6" fill="url(#grad)"/>
+            <text x="4" y="16" font-size="13" font-weight="700" fill="white" font-family="-apple-system">M</text>
+            <defs>
+              <linearGradient id="grad" x1="0" y1="0" x2="22" y2="22">
+                <stop offset="0%" stop-color="#5E5CE6"/>
+                <stop offset="100%" stop-color="#BF5AF2"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="app-name">MD Studio</span>
+        <button id="new-doc-btn" class="icon-btn" title="New Document">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-wrap">
+        <svg class="search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M10 10l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <input id="search-input" type="text" placeholder="Search documents…" autocomplete="off" />
+      </div>
+      <div id="doc-list"></div>
+    </aside>
+
+    <!-- Main -->
+    <main id="main">
+      <header id="toolbar">
+        <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="3" width="14" height="1.5" rx=".75" fill="currentColor"/>
+            <rect x="1" y="7.25" width="14" height="1.5" rx=".75" fill="currentColor"/>
+            <rect x="1" y="11.5" width="14" height="1.5" rx=".75" fill="currentColor"/>
+          </svg>
+        </button>
+        <div class="doc-title-wrap">
+          <input id="doc-title" type="text" placeholder="Untitled" spellcheck="false" />
+        </div>
+        <div class="toolbar-actions">
+          <div class="mode-switcher">
+            <button class="mode-btn active" data-mode="edit">Edit</button>
+            <button class="mode-btn" data-mode="preview">Preview</button>
+            <button class="mode-btn" data-mode="split">Split</button>
+          </div>
+          <button id="delete-doc-btn" class="icon-btn danger" title="Delete Document">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M3 4h9M6 4V2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V4M5.5 6.5v5M9.5 6.5v5M4 4l.7 8.1a.5.5 0 0 0 .5.4h4.6a.5.5 0 0 0 .5-.4L11 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div id="editor-area">
+        <div id="editor-pane">
+          <textarea id="editor" spellcheck="false" placeholder="Start writing in Markdown…"></textarea>
+        </div>
+        <div id="divider"></div>
+        <div id="preview-pane">
+          <div id="preview"></div>
+        </div>
+      </div>
+
+      <footer id="statusbar">
+        <span id="word-count">0 words</span>
+        <span id="char-count">0 chars</span>
+        <span id="save-status">Saved</span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Floating format toolbar -->
+  <div id="format-bar">
+    <button data-action="bold" title="Bold"><b>B</b></button>
+    <button data-action="italic" title="Italic"><i>I</i></button>
+    <button data-action="code" title="Inline Code"><code>`</code></button>
+    <button data-action="link" title="Link">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M5.5 8.5a3.5 3.5 0 0 0 5 0l1.5-1.5a3.5 3.5 0 0 0-5-5L6.5 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M8.5 5.5a3.5 3.5 0 0 0-5 0L2 7a3.5 3.5 0 0 0 5 5l.5-.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button data-action="h1" title="Heading 1">H1</button>
+    <button data-action="h2" title="Heading 2">H2</button>
+    <button data-action="ul" title="Bullet List">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <circle cx="2" cy="4" r="1.2" fill="currentColor"/>
+        <circle cx="2" cy="7.5" r="1.2" fill="currentColor"/>
+        <circle cx="2" cy="11" r="1.2" fill="currentColor"/>
+        <path d="M5 4h8M5 7.5h8M5 11h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button data-action="blockquote" title="Blockquote">"</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/typescript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/css.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/xml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/languages/json.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
